@@ -25,12 +25,12 @@ void rand_proto_type(struct socket_triplet *st)
 	/*
 	 * One special moment on packet sockets. They
 	 * can be created with SOCK_PACKET, so if
-	 * PF_PACKET is disabled, choose some other type.
+	 * AF_PACKET is disabled, choose some other type.
 	 */
 
 	st->protocol = rnd() % PROTO_MAX;
 
-	if (st->family == PF_INET && no_domains[PF_PACKET])
+	if (st->family == AF_INET && no_domains[AF_PACKET])
 		n = 5;
 	else
 		n = 6;
@@ -73,7 +73,7 @@ void gen_socket_args(struct socket_triplet *st)
 		st->family = specific_domain;
 
 	else {
-		st->family = rnd() % TRINITY_PF_MAX;
+		st->family = rnd() % TRINITY_AF_MAX;
 
 		/*
 		 * If we get a disabled family, try to find

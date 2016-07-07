@@ -15,7 +15,7 @@ static void ax25_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	ax25 = zmalloc(sizeof(struct sockaddr_ax25));
 
-	ax25->sax25_family = PF_AX25;
+	ax25->sax25_family = AF_AX25;
 	generate_rand_bytes((unsigned char *) ax25->sax25_call.ax25_call, 7);
 	ax25->sax25_ndigis = rnd();
 	*addr = (struct sockaddr *) ax25;

@@ -214,7 +214,7 @@ static unsigned long handle_arg_sockaddr(struct syscallentry *entry, struct sysc
 	struct sockaddr *sockaddr = NULL;
 	socklen_t sockaddrlen = 0;
 
-	generate_sockaddr((struct sockaddr **)&sockaddr, &sockaddrlen, PF_NOHINT);
+	generate_sockaddr((struct sockaddr **)&sockaddr, &sockaddrlen, AF_NOHINT);
 
 	switch (argnum) {
 	case 1:	if (entry->arg2type == ARG_SOCKADDRLEN)

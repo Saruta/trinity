@@ -36,7 +36,7 @@ static void do_random_sso(struct sockopt *so, struct socket_triplet *triplet)
 retry:
 	switch (rnd() % 4) {
 	case 0:	/* do a random protocol, even if it doesn't match this socket. */
-		i = rnd() % PF_MAX;
+		i = rnd() % AF_MAX;
 		proto = net_protocols[i].proto;
 		if (proto != NULL) {
 			if (proto->setsockopt != NULL) {
@@ -47,7 +47,7 @@ retry:
 		goto retry;
 
 	case 1:	/* do a random IP protocol, even if it doesn't match this socket. */
-		proto = net_protocols[PF_INET].proto;
+		proto = net_protocols[AF_INET].proto;
 		proto->setsockopt(so, triplet);
 		break;
 

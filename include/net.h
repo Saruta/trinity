@@ -19,13 +19,13 @@ extern int server_port;
 extern char server_addr[INET6_ADDRSTRLEN];
 
 /* glibc headers might be older than the kernel, so chances are we know
- * about more protocols than glibc does. So we define our own PF_MAX */
-#define TRINITY_PF_MAX 42
+ * about more protocols than glibc does. So we define our own AF_MAX */
+#define TRINITY_AF_MAX 42
 
 #define TYPE_MAX 10
 #define PROTO_MAX 256
 
-#define PF_NOHINT (-1)
+#define AF_NOHINT (-1)
 
 struct sock_option {
 	const unsigned int name;
@@ -50,7 +50,7 @@ struct netproto {
 struct protoptr {
 	const struct netproto *proto;
 };
-extern const struct protoptr net_protocols[TRINITY_PF_MAX];
+extern const struct protoptr net_protocols[TRINITY_AF_MAX];
 
 struct socketinfo * get_rand_socketinfo(void);
 int fd_from_socketinfo(struct socketinfo *si);

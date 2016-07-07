@@ -29,7 +29,7 @@ unsigned int specific_domain = 0;
 unsigned int user_specified_children = 0;
 
 bool do_specific_domain = FALSE;
-bool no_domains[TRINITY_PF_MAX];
+bool no_domains[TRINITY_AF_MAX];
 
 bool dry_run = FALSE;
 bool show_unannotated = FALSE;

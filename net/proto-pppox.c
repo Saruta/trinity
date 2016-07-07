@@ -21,7 +21,7 @@ static void pppox_PX_PROTO_OE(struct sockaddr **addr, socklen_t *addrlen)
 
 	pppox = zmalloc(sizeof(struct sockaddr_pppox));
 
-	pppox->sa_family = PF_PPPOX;
+	pppox->sa_family = AF_PPPOX;
 	pppox->sa_protocol = rnd() % 3;
 
 	pppox->sa_addr.pppoe.sid = rnd();
@@ -45,7 +45,7 @@ static void pppox_PX_PROTO_OL2TP_PPPoL2TP(struct sockaddr **addr, socklen_t *add
 
 	pppol2tp = zmalloc(sizeof(struct sockaddr_pppol2tp));
 
-	pppol2tp->sa_family = PF_PPPOX;
+	pppol2tp->sa_family = AF_PPPOX;
 	pppol2tp->sa_protocol = rnd() % 3;
 	pppol2tp->pppol2tp.pid = get_pid();
 	pppol2tp->pppol2tp.fd = get_random_fd();
@@ -65,7 +65,7 @@ static void pppox_PX_PROTO_OL2TP_PPPoL2TPin6(struct sockaddr **addr, socklen_t *
 
 	pppol2tpin6 = zmalloc(sizeof(struct sockaddr_pppol2tpin6));
 
-	pppol2tpin6->sa_family = PF_PPPOX;
+	pppol2tpin6->sa_family = AF_PPPOX;
 	pppol2tpin6->sa_protocol = rnd() % 3;
 	pppol2tpin6->pppol2tp.pid = get_pid();
 	pppol2tpin6->pppol2tp.fd = get_random_fd();
@@ -93,7 +93,7 @@ static void pppox_PX_PROTO_OL2TP_PPPoL2TPv3(struct sockaddr **addr, socklen_t *a
 
 	pppol2tpv3 = zmalloc(sizeof(struct sockaddr_pppol2tpv3));
 
-	pppol2tpv3->sa_family = PF_PPPOX;
+	pppol2tpv3->sa_family = AF_PPPOX;
 	pppol2tpv3->sa_protocol = rnd() % 3;
 	pppol2tpv3->pppol2tp.pid = get_pid();
 	pppol2tpv3->pppol2tp.fd = get_random_fd();
@@ -114,7 +114,7 @@ static void pppox_PX_PROTO_OL2TP_PPPoL2TPv3in6(struct sockaddr **addr, socklen_t
 
 	pppol2tpv3in6 = zmalloc(sizeof(struct sockaddr_pppol2tpv3in6));
 
-	pppol2tpv3in6->sa_family = PF_PPPOX;
+	pppol2tpv3in6->sa_family = AF_PPPOX;
 	pppol2tpv3in6->sa_protocol = rnd() % 3;
 	pppol2tpv3in6->pppol2tp.pid = get_pid();
 	pppol2tpv3in6->pppol2tp.fd = get_random_fd();

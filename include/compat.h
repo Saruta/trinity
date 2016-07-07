@@ -147,82 +147,82 @@ enum {
 #define SOCK_NONBLOCK	04000
 #endif
 
-#ifndef PF_RDS
-#define PF_RDS		21
+#ifndef AF_RDS
+#define AF_RDS		21
 #endif
 #ifndef AF_RDS
-#define AF_RDS		PF_RDS
+#define AF_RDS		AF_RDS
 #endif
 
-#ifndef PF_LLC
-#define PF_LLC		26
+#ifndef AF_LLC
+#define AF_LLC		26
 #endif
 #ifndef AF_LLC
-#define AF_LLC		PF_LLC
+#define AF_LLC		AF_LLC
 #endif
 
 #ifndef AF_IB
 #define AF_IB		27
 #endif
-#ifndef PF_IB
-#define PF_IB          AF_IB
+#ifndef AF_IB
+#define AF_IB          AF_IB
 #endif
 
-#ifndef PF_MPLS
-#define PF_MPLS		28
+#ifndef AF_MPLS
+#define AF_MPLS		28
 #endif
 
-#ifndef PF_CAN
-#define PF_CAN		29
+#ifndef AF_CAN
+#define AF_CAN		29
 #endif
 #ifndef AF_CAN
-#define AF_CAN		PF_CAN
+#define AF_CAN		AF_CAN
 #endif
 
-#ifndef PF_TIPC
-#define PF_TIPC		30
+#ifndef AF_TIPC
+#define AF_TIPC		30
 #endif
 #ifndef AF_TIPC
-#define AF_TIPC		PF_TIPC
+#define AF_TIPC		AF_TIPC
 #endif
 
-#ifndef PF_PHONET
-#define PF_PHONET	35
+#ifndef AF_PHONET
+#define AF_PHONET	35
 #endif
 #ifndef AF_PHONET
-#define AF_PHONET	PF_PHONET
+#define AF_PHONET	AF_PHONET
 #endif
 
-#ifndef PF_CAIF
-#define PF_CAIF		37
+#ifndef AF_CAIF
+#define AF_CAIF		37
 #endif
 #ifndef AF_CAIF
-#define AF_CAIF		PF_CAIF
+#define AF_CAIF		AF_CAIF
 #endif
 
-#ifndef PF_ALG
-#define PF_ALG		38
+#ifndef AF_ALG
+#define AF_ALG		38
 #endif
 #ifndef AF_ALG
-#define AF_ALG		PF_ALG
+#define AF_ALG		AF_ALG
 #endif
 
-#ifndef PF_NFC
-#define PF_NFC		39
+#ifndef AF_NFC
+#define AF_NFC		39
 #endif
 #ifndef AF_NFC
-#define AF_NFC		PF_NFC
+#define AF_NFC		AF_NFC
 #endif
 
-#ifndef PF_VSOCK
-#define PF_VSOCK        40
+#ifndef AF_VSOCK
+#define AF_VSOCK        40
 #endif
 #ifndef AF_VSOCK
-#define AF_VSOCK PF_VSOCK
+#define AF_VSOCK AF_VSOCK
 #endif
 
-#ifndef PF_KCM
-#define PF_KCM		41
+#ifndef AF_KCM
+#define AF_KCM		41
 #endif
 
 #ifndef NFC_SOCKPROTO_RAW
@@ -464,8 +464,8 @@ enum kcmp_type {
 #define SO_MAX_PACING_RATE	47
 #endif
 
-#ifndef SO_BPF_EXTENSIONS
-#define SO_BPF_EXTENSIONS       48
+#ifndef SO_BAF_EXTENSIONS
+#define SO_BAF_EXTENSIONS       48
 #endif
 
 #ifndef SO_INCOMING_CPU

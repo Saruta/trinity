@@ -31,7 +31,7 @@ static void sso_socket(struct socket_triplet *triplet, struct sockopt *so, int f
 	unsigned int tries = 0;
 
 	/* skip over bluetooth due to weird linger bug */
-	if (triplet->family == PF_BLUETOOTH)
+	if (triplet->family == AF_BLUETOOTH)
 		return;
 
 	so->optval = 0;
@@ -179,32 +179,32 @@ static unsigned int valid_proto(unsigned int family)
 	famstr = get_domain_name(family);
 
 	/* Not used for creating sockets. */
-	if (strncmp(famstr, "PF_UNSPEC", 9) == 0)
+	if (strncmp(famstr, "AF_UNSPEC", 9) == 0)
 		return FALSE;
-	if (strncmp(famstr, "PF_BRIDGE", 9) == 0)
+	if (strncmp(famstr, "AF_BRIDGE", 9) == 0)
 		return FALSE;
-	if (strncmp(famstr, "PF_SECURITY", 11) == 0)
+	if (strncmp(famstr, "AF_SECURITY", 11) == 0)
 		return FALSE;
 
 	/* Not actually implemented (or now removed). */
-	if (strncmp(famstr, "PF_NETBEUI", 10) == 0)
+	if (strncmp(famstr, "AF_NETBEUI", 10) == 0)
 		return FALSE;
-	if (strncmp(famstr, "PF_ASH", 6) == 0)
+	if (strncmp(famstr, "AF_ASH", 6) == 0)
 		return FALSE;
-	if (strncmp(famstr, "PF_ECONET", 9) == 0)
+	if (strncmp(famstr, "AF_ECONET", 9) == 0)
 		return FALSE;
-	if (strncmp(famstr, "PF_SNA", 6) == 0)
+	if (strncmp(famstr, "AF_SNA", 6) == 0)
 		return FALSE;
-	if (strncmp(famstr, "PF_WANPIPE", 10) == 0)
+	if (strncmp(famstr, "AF_WANPIPE", 10) == 0)
 		return FALSE;
 
 	/* Needs root. */
 	if (orig_uid != 0) {
-		if (strncmp(famstr, "PF_KEY", 6) == 0)
+		if (strncmp(famstr, "AF_KEY", 6) == 0)
 			return FALSE;
-		if (strncmp(famstr, "PF_PACKET", 9) == 0)
+		if (strncmp(famstr, "AF_PACKET", 9) == 0)
 			return FALSE;
-		if (strncmp(famstr, "PF_LLC", 6) == 0)
+		if (strncmp(famstr, "AF_LLC", 6) == 0)
 			return FALSE;
 	}
 
@@ -257,7 +257,7 @@ static int generate_sockets(void)
 	while (nr_sockets < NR_SOCKET_FDS) {
 		struct socket_triplet st;
 
-		st.family = rnd() % TRINITY_PF_MAX;
+		st.family = rnd() % TRINITY_AF_MAX;
 
 		/* check for ctrl-c again. */
 		if (shm->exit_reason != STILL_RUNNING)
@@ -320,7 +320,7 @@ static void socket_destructor(struct object *obj)
 	//FIXME: This is a workaround for a weird bug where we hang forevre
 	// waiting for bluetooth sockets when we setsockopt.
 	// Hopefully at some point we can remove this when someone figures out what's going on.
-	if (si->triplet.family == PF_BLUETOOTH)
+	if (si->triplet.family == AF_BLUETOOTH)
 		return;
 
 	/* Grab an fd, and nuke it before someone else uses it. */
@@ -372,7 +372,7 @@ static int open_sockets(void)
 		type = buffer[1];
 		protocol = buffer[2];
 
-		if (domain >= TRINITY_PF_MAX) {
+		if (domain >= TRINITY_AF_MAX) {
 			output(1, "cachefile contained invalid domain %u\n", domain);
 			goto regenerate;
 		}

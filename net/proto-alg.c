@@ -219,7 +219,7 @@ static void alg_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	alg = zmalloc(sizeof(struct sockaddr_alg));
 
-	alg->salg_family = PF_ALG;
+	alg->salg_family = AF_ALG;
 
 	type = rnd() % ARRAY_SIZE(types);
 	strcpy((char *)alg->salg_type, types[type]);

@@ -133,7 +133,7 @@
   - --proto-exclude
   - better spread of net protocols on startup
   - check EAFNOSUPPORT if -P
-  - speed up PF_CAN creation
+  - speed up AF_CAN creation
 
 * Improve the ->post routine to walk a list of objects that we allocated during a
    syscalls ->sanitise in a ->post method.

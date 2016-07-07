@@ -19,7 +19,7 @@ void generate_sockaddr(struct sockaddr **addr, socklen_t *addrlen, int pf)
 
 	/* If we got no hint passed down, pick a random proto. */
 	if (pf == -1)
-		pf = rnd() % TRINITY_PF_MAX;
+		pf = rnd() % TRINITY_AF_MAX;
 
 	proto = net_protocols[pf].proto;
 	if (proto != NULL) {

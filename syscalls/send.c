@@ -120,7 +120,7 @@ static void sanitise_sendmsg(struct syscallrecord *rec)
 
 	msg = zmalloc(sizeof(struct msghdr));
 
-	generate_sockaddr((struct sockaddr **) &sa, (socklen_t *) &salen, rnd() % TRINITY_PF_MAX);
+	generate_sockaddr((struct sockaddr **) &sa, (socklen_t *) &salen, rnd() % TRINITY_AF_MAX);
 
 	msg->msg_name = sa;
 	msg->msg_namelen = salen;

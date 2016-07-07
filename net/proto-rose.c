@@ -20,7 +20,7 @@ static void rose_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	rose = zmalloc(sizeof(struct sockaddr_rose));
 
-	rose->srose_family = PF_ROSE;
+	rose->srose_family = AF_ROSE;
 	rose->srose_addr.rose_addr[0] = rnd();
 	rose->srose_addr.rose_addr[1] = rnd();
 	rose->srose_addr.rose_addr[2] = rnd();

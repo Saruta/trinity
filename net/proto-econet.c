@@ -14,7 +14,7 @@ static void econet_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	ec = zmalloc(sizeof(struct sockaddr_ec));
 
-	ec->sec_family = PF_ECONET;
+	ec->sec_family = AF_ECONET;
 	ec->port = rnd();
 	ec->cb = rnd();
 	ec->type = rnd();

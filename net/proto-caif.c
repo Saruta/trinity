@@ -19,7 +19,7 @@ static void caif_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	caif = zmalloc(sizeof(struct sockaddr_caif));
 
-	caif->family = PF_CAIF;
+	caif->family = AF_CAIF;
 	caif->u.at.type = rnd();
 	for (i = 0; i < 16; i++)
 		caif->u.util.service[i] = rnd();

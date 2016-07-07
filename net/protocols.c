@@ -3,49 +3,49 @@
 #include "net.h"
 #include "compat.h"
 
-const struct protoptr net_protocols[TRINITY_PF_MAX] = {
-	[PF_UNIX] = { .proto = &proto_unix },
-	[PF_INET] = { .proto = &proto_ipv4 },
-	[PF_AX25] = { .proto = &proto_ax25 },
-	[PF_IPX] = { .proto = &proto_ipx },
+const struct protoptr net_protocols[TRINITY_AF_MAX] = {
+	[AF_UNIX] = { .proto = &proto_unix },
+	[AF_INET] = { .proto = &proto_ipv4 },
+	[AF_AX25] = { .proto = &proto_ax25 },
+	[AF_IPX] = { .proto = &proto_ipx },
 #ifdef USE_APPLETALK
-	[PF_APPLETALK] = { .proto = &proto_appletalk },
+	[AF_APPLETALK] = { .proto = &proto_appletalk },
 #endif
-	[PF_X25] = { .proto = &proto_x25 },
+	[AF_X25] = { .proto = &proto_x25 },
 #ifdef USE_IPV6
-	[PF_INET6] = { .proto = &proto_inet6 },
+	[AF_INET6] = { .proto = &proto_inet6 },
 #endif
-	[PF_DECnet] = { .proto = &proto_decnet },
-	[PF_PACKET] = { .proto = &proto_packet },
-	[PF_ECONET] = { .proto = &proto_econet },
+	[AF_DECnet] = { .proto = &proto_decnet },
+	[AF_PACKET] = { .proto = &proto_packet },
+	[AF_ECONET] = { .proto = &proto_econet },
 #ifdef USE_RDS
-	[PF_RDS] = { .proto = &proto_rds },
+	[AF_RDS] = { .proto = &proto_rds },
 #endif
-	[PF_IRDA] = { .proto = &proto_irda },
-	[PF_LLC] = { .proto = &proto_llc },
-	[PF_CAN] = { .proto = &proto_can },
-	[PF_TIPC] = { .proto = &proto_tipc },
-	[PF_BLUETOOTH] = { .proto = &proto_bluetooth },
-	[PF_PHONET] = { .proto = &proto_phonet },
+	[AF_IRDA] = { .proto = &proto_irda },
+	[AF_LLC] = { .proto = &proto_llc },
+	[AF_CAN] = { .proto = &proto_can },
+	[AF_TIPC] = { .proto = &proto_tipc },
+	[AF_BLUETOOTH] = { .proto = &proto_bluetooth },
+	[AF_PHONET] = { .proto = &proto_phonet },
 #ifdef USE_CAIF
-	[PF_CAIF] = { .proto = &proto_caif },
+	[AF_CAIF] = { .proto = &proto_caif },
 #endif
-	[PF_NFC] = { .proto = &proto_nfc },
+	[AF_NFC] = { .proto = &proto_nfc },
 #ifdef USE_NETROM
-	[PF_NETROM] = { .proto = &proto_netrom },
+	[AF_NETROM] = { .proto = &proto_netrom },
 #endif
-	[PF_NETLINK] = { .proto = &proto_netlink },
+	[AF_NETLINK] = { .proto = &proto_netlink },
 #ifdef USE_ROSE
-	[PF_ROSE] = { .proto = &proto_rose },
+	[AF_ROSE] = { .proto = &proto_rose },
 #endif
-	[PF_ATMPVC] = { .proto = &proto_atmpvc },
-	[PF_ATMSVC] = { .proto = &proto_atmsvc },
-	[PF_NETBEUI] = { .proto = &proto_netbeui },
-	[PF_PPPOX] = { .proto = &proto_pppol2tp },
-	[PF_IUCV] = { .proto = &proto_iucv },
-	[PF_RXRPC] = { .proto = &proto_rxrpc },
+	[AF_ATMPVC] = { .proto = &proto_atmpvc },
+	[AF_ATMSVC] = { .proto = &proto_atmsvc },
+	[AF_NETBEUI] = { .proto = &proto_netbeui },
+	[AF_PPPOX] = { .proto = &proto_pppol2tp },
+	[AF_IUCV] = { .proto = &proto_iucv },
+	[AF_RXRPC] = { .proto = &proto_rxrpc },
 #ifdef USE_IF_ALG
-	[PF_ALG] = { .proto = &proto_alg },
+	[AF_ALG] = { .proto = &proto_alg },
 #endif
-	[PF_KCM] = { .proto = &proto_kcm },
+	[AF_KCM] = { .proto = &proto_kcm },
 };

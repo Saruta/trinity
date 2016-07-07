@@ -15,7 +15,7 @@ static void phonet_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	pn = zmalloc(sizeof(struct sockaddr_pn));
 
-	pn->spn_family = PF_PHONET;
+	pn->spn_family = AF_PHONET;
 	pn->spn_obj = rnd();
 	pn->spn_dev = rnd();
 	pn->spn_resource = rnd();

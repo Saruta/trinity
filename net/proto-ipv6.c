@@ -74,13 +74,13 @@ static void ipv6_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	ipv6 = zmalloc(sizeof(struct sockaddr_in6));
 
-	ipv6->sin6_family = PF_INET6;
+	ipv6->sin6_family = AF_INET6;
 
 	gen_random_ipv6_address(&ipv6->sin6_addr);
 	ipv6->sin6_port = htons(rnd() % 65535);
 
 	/* Client side if we supplied server_addr */
-	if (inet_pton(PF_INET6, server_addr, &serv_addr) == 1)
+	if (inet_pton(AF_INET6, server_addr, &serv_addr) == 1)
 		ipv6->sin6_addr = serv_addr;
 	/* Server side if we supplied port without addr, so listen on in6addr_any */
 	else if (server_port != 0)

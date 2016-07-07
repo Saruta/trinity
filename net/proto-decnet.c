@@ -16,7 +16,7 @@ static void decnet_gen_sockaddr(struct sockaddr **addr, socklen_t *addrlen)
 
 	dn = zmalloc(sizeof(struct sockaddr_dn));
 
-	dn->sdn_family = PF_DECnet;
+	dn->sdn_family = AF_DECnet;
 	dn->sdn_flags = rnd();
 	dn->sdn_objnum = rnd();
 	dn->sdn_objnamel = rnd() % 16;
